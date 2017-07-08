@@ -2,11 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>fr.exia</groupId>
-    <artifactId>boulderdash</artifactId>
+    <artifactId>trongame</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>main</artifactId>
-  <name>boulderdash.main</name>
+  <name>trongame.main</name>
   <dependencies>
     <dependency>
       <groupId>fr.exia</groupId>
