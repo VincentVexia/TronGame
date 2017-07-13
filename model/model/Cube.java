@@ -14,15 +14,10 @@ public class Cube extends Mobile {
 	
 	/** The height. */
 	private static int		HEIGHT								= 16;
-	
-	/** The max distance traveled. */
-	private static int		MAX_DISTANCE_TRAVELED	= 1400;
-	
+		
 	/** The image. */
 	private static String	IMAGE									= "cube";
 
-	/** The distance traveled. */
-	private int						distanceTraveled			= 0;
 
 	/**
 	 * Instantiates a new cube.
@@ -70,17 +65,6 @@ public class Cube extends Mobile {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see model.Mobile#move()
-	 */
-	@Override
-	public void move() {
-		this.distanceTraveled += SPEED;
-		if (this.distanceTraveled >= MAX_DISTANCE_TRAVELED) {
-			this.getTronModel().removeMobile(this);
-		}
-		super.move();
-	}
 
 	/* (non-Javadoc)
 	 * @see model.Mobile#isWeapon()
