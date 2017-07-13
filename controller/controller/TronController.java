@@ -10,16 +10,36 @@ import model.ITronModel;
 import model.Position;
 import view.ITronView;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TronController.
+ */
 public class TronController implements IOrderPerformer {
+	
+	/** The time sleep. */
 	private static int						TIME_SLEEP	= 30;
+	
+	/** The tron model. */
 	private final ITronModel	tronModel;
+	
+	/** The is game over. */
 	private boolean								isGameOver	= false;
+	
+	/** The view system. */
 	private ITronView						viewSystem;
 	
+	/**
+	 * Instantiates a new tron controller.
+	 *
+	 * @param tronModel the tron model
+	 */
 	public TronController(final ITronModel tronModel) {
 		this.tronModel = tronModel;
 	}
 
+	/* (non-Javadoc)
+	 * @see controller.IOrderPerformer#orderPerform(controller.IUserOrder)
+	 */
 	public void orderPerform(final IUserOrder userOrder) {
 		if (userOrder != null) {
 			final IMobile lightcircle = this.tronModel.getMobileByPlayer(userOrder.getPlayer());
@@ -57,6 +77,12 @@ public class TronController implements IOrderPerformer {
 //	private void buildAllimages(final String imageName) throws IOException {
 //		this.images = new Image[1];
 //		this.images = ImageIO.read("images/" + imageName + ".png");
+/**
+ * Lauch missile.
+ *
+ * @param player the player
+ * @throws IOException Signals that an I/O exception has occurred.
+ */
 //	
 	private void lauchMissile(final int player) throws IOException {
 		final IMobile lightcircle = this.tronModel.getMobileByPlayer(player);
@@ -86,6 +112,13 @@ public class TronController implements IOrderPerformer {
 		}
 	}
 
+	/**
+	 * Checks if is weapon on mobile.
+	 *
+	 * @param mobile the mobile
+	 * @param weapon the weapon
+	 * @return true, if is weapon on mobile
+	 */
 	private boolean isWeaponOnMobile(final IMobile mobile, final IMobile weapon) {
 		if (((weapon.getPosition().getX() / weapon.getWidth()) >= (mobile.getPosition().getX() / weapon.getWidth()))
 				&& ((weapon.getPosition().getX() / weapon.getWidth()) <= ((mobile.getPosition().getX() + mobile.getWidth()) / weapon.getWidth()))) {
@@ -97,6 +130,11 @@ public class TronController implements IOrderPerformer {
 		return false;
 	}
 
+	/**
+	 * Manage collision.
+	 *
+	 * @param weapon the weapon
+	 */
 	private void manageCollision(final IMobile weapon) {
 		final ArrayList<IMobile> target = new ArrayList<IMobile>();
 		boolean isTargetHit = false;
@@ -115,12 +153,18 @@ public class TronController implements IOrderPerformer {
 		}
 	}
 
+	/**
+	 * Play.
+	 */
 	public void play() {
 		this.gameLoop();
 		this.viewSystem.displayMessage("Game Over !");
 		this.viewSystem.closeAll();
 	}
 
+	/**
+	 * Game loop.
+	 */
 	private void gameLoop() {
 		while (!this.isGameOver) {
 			try {
@@ -143,7 +187,13 @@ public class TronController implements IOrderPerformer {
 		}
 	}
 
+	/**
+	 * Sets the view system.
+	 *
+	 * @param viewSystem the new view system
+	 */
 	public void setViewSystem(final ITronView viewSystem) {
 		this.viewSystem = viewSystem;
 	}
 }
+//

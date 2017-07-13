@@ -8,8 +8,17 @@ import model.Lightcircle;
 import model.Position;
 import view.TronView;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Trongame.
+ */
 public abstract class Trongame {
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(final String[] args) {
 		final TronModel tronModel = new TronModel();
 
@@ -24,3 +33,4 @@ public abstract class Trongame {
 	}
 
 }
+/

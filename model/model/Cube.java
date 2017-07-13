@@ -1,18 +1,45 @@
 package model;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Cube.
+ */
 public class Cube extends Mobile {
+	
+	/** The speed. */
 	private static int		SPEED									= 4;
+	
+	/** The width. */
 	private static int		WIDTH									= 16;
+	
+	/** The height. */
 	private static int		HEIGHT								= 16;
+	
+	/** The max distance traveled. */
 	private static int		MAX_DISTANCE_TRAVELED	= 1400;
+	
+	/** The image. */
 	private static String	IMAGE									= "cube";
 
+	/** The distance traveled. */
 	private int						distanceTraveled			= 0;
 
+	/**
+	 * Instantiates a new cube.
+	 *
+	 * @param direction the direction
+	 * @param position the position
+	 */
 	public Cube(final Direction direction, final Position position) {
 		super(direction, position, new Dimension(WIDTH, HEIGHT), SPEED, IMAGE);
 	}
 
+	/**
+	 * Gets the width with A direction.
+	 *
+	 * @param direction the direction
+	 * @return the width with A direction
+	 */
 	public static int getWidthWithADirection(final Direction direction) {
 		switch (direction) {
 			case UP:
@@ -25,6 +52,12 @@ public class Cube extends Mobile {
 		}
 	}
 
+	/**
+	 * Gets the height with A direction.
+	 *
+	 * @param direction the direction
+	 * @return the height with A direction
+	 */
 	public static int getHeightWithADirection(final Direction direction) {
 		switch (direction) {
 			case UP:
@@ -37,6 +70,9 @@ public class Cube extends Mobile {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see model.Mobile#move()
+	 */
 	@Override
 	public void move() {
 		this.distanceTraveled += SPEED;
@@ -46,6 +82,9 @@ public class Cube extends Mobile {
 		super.move();
 	}
 
+	/* (non-Javadoc)
+	 * @see model.Mobile#isWeapon()
+	 */
 	@Override
 	public boolean isWeapon() {
 		return true;

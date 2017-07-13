@@ -10,15 +10,31 @@ import gameframe.IGraphicsBuilder;
 import model.ITronModel;
 import model.IMobile;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GraphicsBuilder.
+ */
 class GraphicsBuilder implements IGraphicsBuilder {
+	
+	/** The tron model. */
 	private final ITronModel	tronModel;
+	
+	/** The empty sky. */
 	private BufferedImage					emptySky;
 
+	/**
+	 * Instantiates a new graphics builder.
+	 *
+	 * @param tronModel the tron model
+	 */
 	public GraphicsBuilder(final ITronModel tronModel) {
 		this.tronModel = tronModel;
 		this.buildEmptySky();
 	}
 
+	/* (non-Javadoc)
+	 * @see gameframe.IGraphicsBuilder#applyModelToGraphic(java.awt.Graphics, java.awt.image.ImageObserver)
+	 */
 	public void applyModelToGraphic(final Graphics graphics, final ImageObserver observer) {
 		graphics.drawImage(this.emptySky, 0, 0, observer);
 
@@ -27,20 +43,36 @@ class GraphicsBuilder implements IGraphicsBuilder {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see gameframe.IGraphicsBuilder#getGlobalWidth()
+	 */
 	public int getGlobalWidth() {
 		return this.tronModel.getArea().getWidth();
 	}
 
+	/* (non-Javadoc)
+	 * @see gameframe.IGraphicsBuilder#getGlobalHeight()
+	 */
 	public int getGlobalHeight() {
 		return this.tronModel.getArea().getHeight();
 	}
 
+	/**
+	 * Builds the empty sky.
+	 */
 	private void buildEmptySky() {
 		this.emptySky = new BufferedImage(this.tronModel.getArea().getWidth(), this.tronModel.getArea().getHeight(), BufferedImage.TYPE_INT_RGB);
 		final Graphics2D graphics = (Graphics2D) this.emptySky.getGraphics();
 		graphics.drawImage(this.tronModel.getArea().getImage(), 0, 0, this.tronModel.getArea().getWidth(), this.tronModel.getArea().getHeight(), null);
 	}
 
+	/**
+	 * Draw mobile.
+	 *
+	 * @param mobile the mobile
+	 * @param graphics the graphics
+	 * @param observer the observer
+	 */
 	private void drawMobile(final IMobile mobile, final Graphics graphics, final ImageObserver observer) {
 		final BufferedImage imageMobile = new BufferedImage(mobile.getWidth(), mobile.getHeight(), Transparency.TRANSLUCENT);
 		final Graphics graphicsMobile = imageMobile.getGraphics();
