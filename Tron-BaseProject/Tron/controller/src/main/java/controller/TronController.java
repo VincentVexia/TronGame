@@ -72,7 +72,6 @@ public class TronController implements IOrderPerformer {
 			final Position position = new Position(lightcircle.getPosition().getX() + ((lightcircle.getWidth() - Cube.getWidthWithADirection(lightcircle.getDirection())) / 2),
 					lightcircle.getPosition().getY() + ((lightcircle.getHeight() - Cube.getHeightWithADirection(lightcircle.getDirection())) / 2));
 			this.tronModel.addMobile(new Cube(lightcircle.getDirection(), position));
-			build
 //			Position(lightcircle.getPosition().getX() + ((lightcircle.getWidth() - Cube.getWidthWithADirection(lightcircle.getDirection())) / 2),
 //					lightcircle.getPosition().getY() + ((lightcircle.getHeight() - Cube.getHeightWithADirection(lightcircle.getDirection())) / 2)) = "cube";
 			switch (lightcircle.getDirection()) {
