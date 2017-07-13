@@ -1,28 +1,21 @@
 package controller;
 
-import java.awt.Image;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
-
 import model.Cube;
-import model.Dimension;
 import model.Direction;
 import model.IMobile;
 import model.ITronModel;
 import model.Position;
 import view.ITronView;
-import model.Mobile;
 
 public class TronController implements IOrderPerformer {
 	private static int						TIME_SLEEP	= 30;
 	private final ITronModel	tronModel;
 	private boolean								isGameOver	= false;
 	private ITronView						viewSystem;
-	private Image[] images;
-
+	
 	public TronController(final ITronModel tronModel) {
 		this.tronModel = tronModel;
 	}

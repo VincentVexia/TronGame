@@ -9,9 +9,6 @@ import javax.swing.JFrame;
 
 public class GameFrame extends JFrame implements KeyListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final IEventPerformer	eventPerformer;
 

@@ -138,7 +138,6 @@ public class Mobile implements IMobile {
 		this.images[Direction.RIGHT.ordinal()] = ImageIO.read(new File("images/" + imageName + "_RIGHT.png"));
 		this.images[Direction.DOWN.ordinal()] = ImageIO.read(new File("images/" + imageName + "_DOWN.png"));
 		this.images[Direction.LEFT.ordinal()] = ImageIO.read(new File("images/" + imageName + "_LEFT.png"));
-		this.images[Direction.LIGHT.ordinal()] = ImageIO.read(new File("images/cube.png"));
 	}
 
 	public Image getImage() {
