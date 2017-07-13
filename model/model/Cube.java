@@ -7,7 +7,7 @@ package model;
 public class Cube extends Mobile {
 	
 	/** The speed. */
-	private static int		SPEED									= 4;
+	private static int		SPEED									= 0;
 	
 	/** The width. */
 	private static int		WIDTH									= 16;
