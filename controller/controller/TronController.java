@@ -27,7 +27,6 @@ public class TronController implements IOrderPerformer {
 		this.tronModel = tronModel;
 	}
 
-	@Override
 	public void orderPerform(final IUserOrder userOrder) {
 		if (userOrder != null) {
 			final IMobile lightcircle = this.tronModel.getMobileByPlayer(userOrder.getPlayer());

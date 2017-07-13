@@ -35,18 +35,15 @@ public class GameFrame extends JFrame implements KeyListener {
 		this.setVisible(true);
 	}
 
-	@Override
 	public void keyPressed(final KeyEvent keyEvent) {
 		this.eventPerformer.eventPerform(keyEvent);
 	}
 
-	@Override
 	public void keyReleased(final KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void keyTyped(final KeyEvent keyEvent) {
 		// TODO Auto-generated method stub
 

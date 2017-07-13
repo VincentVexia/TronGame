@@ -26,33 +26,27 @@ public class Mobile implements IMobile {
 		}
 	}
 
-	@Override
 	public Direction getDirection() {
 		return this.direction;
 	}
 
-	@Override
 	public void setDirection(final Direction direction) {
 		this.direction = direction;
 	}
 
-	@Override
 	public Position getPosition() {
 		return this.position;
 	}
 
-	@Override
 	public Dimension getDimension() {
 		return this.dimension;
 	}
 
-	@Override
 	public void placeInArea(final IArea area) {
 		this.position.setMaxX(area.getDimension().getWidth());
 		this.position.setMaxY(area.getDimension().getHeight());
 	}
 
-	@Override
 	public void move() {
 		switch (this.direction) {
 			case UP:
@@ -88,7 +82,6 @@ public class Mobile implements IMobile {
 		this.position.setX(this.position.getX() - this.speed);
 	}
 
-	@Override
 	public boolean isPlayer(final int player) {
 		return false;
 	}
@@ -97,24 +90,20 @@ public class Mobile implements IMobile {
 		return this.tronModel;
 	}
 
-	@Override
 	public void setTronModel(final ITronModel tronModel) {
 		this.tronModel = tronModel;
 		this.getPosition().setMaxX(this.getTronModel().getArea().getDimension().getWidth());
 		this.getPosition().setMaxY(this.getTronModel().getArea().getDimension().getHeight());
 	}
 
-	@Override
 	public boolean hit() {
 		return false;
 	}
 
-	@Override
 	public boolean isWeapon() {
 		return false;
 	}
 
-	@Override
 	public int getWidth() {
 		switch (this.direction) {
 			case UP:
@@ -127,7 +116,6 @@ public class Mobile implements IMobile {
 		}
 	}
 
-	@Override
 	public int getHeight() {
 		switch (this.direction) {
 			case UP:
@@ -140,7 +128,6 @@ public class Mobile implements IMobile {
 		}
 	}
 
-	@Override
 	public int getSpeed() {
 		return this.speed;
 	}
@@ -154,7 +141,6 @@ public class Mobile implements IMobile {
 		this.images[Direction.LIGHT.ordinal()] = ImageIO.read(new File("images/cube.png"));
 	}
 
-	@Override
 	public Image getImage() {
 		return this.images[this.direction.ordinal()];
 	}

@@ -22,17 +22,14 @@ public class TronView implements ITronView, Runnable {
 		SwingUtilities.invokeLater(this);
 	}
 
-	@Override
 	public void run() {
 		this.gameFrame = new GameFrame("Tron", this.eventPerformer, this.graphicsBuilder, this.observable);
 	}
 
-	@Override
 	public void displayMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);
 	}
 
-	@Override
 	public void closeAll() {
 		this.gameFrame.dispose();
 	}

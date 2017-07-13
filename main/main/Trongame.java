@@ -1,3 +1,5 @@
+package main;
+
 import controller.TronController;
 import model.Dimension;
 import model.Direction;

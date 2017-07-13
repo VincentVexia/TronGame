@@ -19,7 +19,6 @@ class GraphicsBuilder implements IGraphicsBuilder {
 		this.buildEmptySky();
 	}
 
-	@Override
 	public void applyModelToGraphic(final Graphics graphics, final ImageObserver observer) {
 		graphics.drawImage(this.emptySky, 0, 0, observer);
 
@@ -28,12 +27,10 @@ class GraphicsBuilder implements IGraphicsBuilder {
 		}
 	}
 
-	@Override
 	public int getGlobalWidth() {
 		return this.tronModel.getArea().getWidth();
 	}
 
-	@Override
 	public int getGlobalHeight() {
 		return this.tronModel.getArea().getHeight();
 	}

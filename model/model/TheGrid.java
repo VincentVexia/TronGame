@@ -20,22 +20,18 @@ class TheGrid implements IArea {
 		}
 	}
 
-	@Override
 	public Dimension getDimension() {
 		return this.dimension;
 	}
 
-	@Override
 	public int getWidth() {
 		return this.getDimension().getWidth();
 	}
 
-	@Override
 	public int getHeight() {
 		return this.getDimension().getHeight();
 	}
 
-	@Override
 	public Image getImage() {
 		return this.image;
 	}
