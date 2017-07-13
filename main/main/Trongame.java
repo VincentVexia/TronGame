@@ -14,8 +14,8 @@ public abstract class Trongame {
 		final TronModel tronModel = new TronModel();
 
 		tronModel.buildArea(new Dimension(600, 400));
-		tronModel.addMobile(new Lightcircle(0, Direction.RIGHT, new Position(10, 60), "BlueLightcircle"));
-		tronModel.addMobile(new Lightcircle(1, Direction.LEFT, new Position(10, 330), "RedLightcircle"));
+		tronModel.addMobile(new Lightcircle(0, Direction.RIGHT, new Position(30, 200), "BlueLightcircle"));
+		tronModel.addMobile(new Lightcircle(1, Direction.LEFT, new Position(550, 200), "RedLightcircle"));
 
 		final TronController tronController = new TronController(tronModel);
 		final TronView tronView = new TronView(tronController, tronModel, tronModel);
